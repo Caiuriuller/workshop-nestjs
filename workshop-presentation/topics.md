@@ -13,28 +13,30 @@
 - [Quais problemas ele resolve?](./parte-1/problemas-resolvidos.md)
 - Quais tipos de projeto ele leva vantagem?
 - Quais tipos de projeto ele não leva vantagem?
-- Quando usar?
-- Quando não usar?
 
 ## Parte 2 - Fundamentos (30m)
 
-- Reflect meta data & Decorators
-- Modules
-- Controllers
-- Providers (services)
-- Dependency injection
+- [Reflect meta data & Decorators](../src/app.controller.ts)
+- [Controllers](../src/app.controller.ts)
+- [Providers](../src/task/task.service.ts)
+- [Modules](../src/app.module.ts)
+- [Dependency injection](../src/task/task.controller.ts)
 - [Comparação: Nodejs puro (express) vs Typescript vs Nestjs](./comparison.md)
-- Guards
-- Interceptors
-- Pipe
 - Middleware
+- [Guard](../src/auth/auth.guard.ts)
+- Interceptors
+- [Pipe](../src/main.ts)
+
+## Parte 3 - Container IOC
+- [Como funciona - outras tecnologias tambem usam](../src/main.ts)
+
 
 ## Parte 3 - Nice shit
-- Integração swagger
+- [Integracao swagger setup](../src/main.ts)
+- [Integracao swagger uso](../src/task/task.controller.ts)
 - Cli
-- Suporte nativo a diferentes tecnologias
+- Suporte nativo a diferentes tecnologias 
 
 ## Parte 4 - Nestjs em 2026 (20m)
-
-- SDD
-- Quem usa esse modelo?
+- Typescript + ia
+- SDD (paypal, boticario, skills)

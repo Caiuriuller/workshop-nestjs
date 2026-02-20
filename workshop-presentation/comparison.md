@@ -1,7 +1,5 @@
 **Express (Node.js puro):**
 
-Quais problemas abaixo?
-
 ```typescript
 // Sem estrutura definida, tudo manual
 app.get('/users', async (req, res) => {
@@ -14,9 +12,25 @@ app.get('/users', async (req, res) => {
 });
 ```
 
+**Typescript**
+
+
+```typescript
+class UsersController {
+  constructor(private readonly usersService: UsersService) {}
+
+  async findAll(): Promise<User[]> {
+    return this.usersService.findAll();
+  }
+}
+
+// Roteamento manual
+const usersService = new UsersService();
+const usersController = new UsersController(usersService);
+```
+
 **NestJS:**
 
-Quais vantagens abaixo?
 ```typescript
 @Controller('users')
 export class UsersController {

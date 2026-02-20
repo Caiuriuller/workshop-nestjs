@@ -2,14 +2,18 @@ import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
+import { AuthGuard } from './auth/auth.guard';
+import { LoggingInterceptor } from './logging.interceptor';
 
 async function bootstrap() {
   //TODO: Container IOC
   const app = await NestFactory.create(AppModule);
 
   //TODO: Middleware -> Guards -> Interceptors -> Pipes
+  app.useGlobalGuards(new AuthGuard());
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
-
+  app.useGlobalInterceptors(new LoggingInterceptor());
+  
   //TODO: Swagger integration
   const config = new DocumentBuilder()
     .setTitle('Task Manager')
