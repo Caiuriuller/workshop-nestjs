@@ -7,7 +7,7 @@ app.get('/users', async (req, res) => {
     const users = await db.query('SELECT * FROM users');
     res.json(users);
   } catch (error) {
-    res.status(505).json({ error: error.message });
+    res.status(500).json({ error: error.message });
   }
 });
 

@@ -27,6 +27,7 @@
 
 ## Parte 3 - Container IOC (5m)
 - [Como funciona - outras tecnologias tambem usam](../src/main.ts)
+- É possivel rodar um container ioc em nodejs puro
 
 ## Parte 4 - Nice shit (5m)
 - [Integracao swagger setup](../src/main.ts)
@@ -36,4 +37,4 @@
 
 ## Parte 5 - Nestjs em 2026 (15m)
 - Typescript + ia
-- SDD (paypal, boticario, skills)
+- SDD 
