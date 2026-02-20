@@ -3,6 +3,7 @@ import { Knex } from 'knex';
 import { KNEX_CONNECTION } from '../database/database.provider';
 import { CreateTaskDto } from './dto/create-task.dto';
 
+//Scopes
 @Injectable()
 export class TaskService {
   constructor(@Inject(KNEX_CONNECTION) private readonly knex: Knex) {}

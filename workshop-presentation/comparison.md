@@ -10,6 +10,9 @@ app.get('/users', async (req, res) => {
     res.status(505).json({ error: error.message });
   }
 });
+
+const db = new Database();
+const usersRepository = new UsersRepository(db);
 ```
 
 **Typescript**

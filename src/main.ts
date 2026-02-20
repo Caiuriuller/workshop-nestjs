@@ -13,7 +13,7 @@ async function bootstrap() {
   app.useGlobalGuards(new AuthGuard());
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
   app.useGlobalInterceptors(new LoggingInterceptor());
-  
+
   //TODO: Swagger integration
   const config = new DocumentBuilder()
     .setTitle('Task Manager')
