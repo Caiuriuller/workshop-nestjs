@@ -1,7 +1,14 @@
-**Express (Node.js puro):**
+# Express vs TypeScript vs NestJS
+
+Uma comparação direta de como o mesmo endpoint de listagem de usuários é implementado em cada abordagem.
+
+---
+
+## Express (Node.js puro)
+
+Sem estrutura definida — roteamento, injeção de dependência e tratamento de erros são responsabilidade do desenvolvedor.
 
 ```typescript
-// Sem estrutura definida, tudo manual
 app.get('/users', async (req, res) => {
   try { 
     const users = await db.query('SELECT * FROM users');
@@ -15,8 +22,11 @@ const db = new Database();
 const usersRepository = new UsersRepository(db);
 ```
 
-**Typescript**
+---
 
+## TypeScript (sem framework)
+
+Tipagem e orientação a objetos, mas o roteamento e a instanciação de dependências ainda são manuais.
 
 ```typescript
 class UsersController {
@@ -27,12 +37,15 @@ class UsersController {
   }
 }
 
-// Roteamento manual
 const usersService = new UsersService();
 const usersController = new UsersController(usersService);
 ```
 
-**NestJS:**
+---
+
+## NestJS
+
+Decorators, injeção de dependência e roteamento gerenciados pelo framework — o código expressa só a intenção.
 
 ```typescript
 @Controller('users')
@@ -45,3 +58,5 @@ export class UsersController {
   }
 }
 ```
+
+> O container IoC do NestJS instancia e injeta `UsersService` automaticamente — zero configuração manual.
